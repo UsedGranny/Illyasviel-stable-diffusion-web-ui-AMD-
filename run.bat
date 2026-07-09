@@ -1,3 +1,5 @@
+run.bat
+
 @echo off
 
 call environment.bat
