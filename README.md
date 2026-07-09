@@ -2,7 +2,7 @@
 
 I took Illyasviel pack ... And brute forced it until amd worked.
 i shared it on reddit around two months ago ... but i guess i didnt get much apreciation. link: https://www.reddit.com/r/StableDiffusion/comments/1tcyyb4/stable_diffusion_webui_forge_for_amd_gpu/
-
+there is an img of the cmd startup proces there.
 
 i asked ai to sumarize everything i shat on by sharing all files with it ...cause it was 2 months ago and i could not bother remembering because i am lazy.. so anyways... here it is: 
 
@@ -34,3 +34,4 @@ Standard Forge standalone bundles are hardcoded to crash instantly if they do no
 ### 6. Validation Gutting (`launch_utils.py` & `memory_management.py`)
 * **The Override:** Removed and commented out the active hardware validation blocks.
 * **The Impact:** Silences the explicit backend functions that throw the "Found no NVIDIA driver" error screen, allowing the code to run blindly on alternative configurations.
+
