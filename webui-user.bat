@@ -10,7 +10,10 @@ set VENV_DIR=
 :: that produce black images / NaNs under fp16. Costs VRAM and speed --
 :: drop --no-half (or add --medvram) once you confirm fp16 actually works
 :: fine on your card.
-set COMMANDLINE_ARGS=--use-directml --precision full --no-half --disable-nan-check --skip-torch-cuda-test
+:: --disable-xformers skips a pointless import attempt: xformers is already
+:: force-disabled under DirectML by memory_management.py, so importing it
+:: only adds startup noise and a slower boot with no functional benefit.
+set COMMANDLINE_ARGS=--use-directml --precision full --no-half --disable-nan-check --skip-torch-cuda-test --disable-xformers
 
 :: CPU-only torch build: DirectML supplies its own device backend
 :: (torch_directml), so we deliberately avoid pulling a CUDA/ROCm build.
